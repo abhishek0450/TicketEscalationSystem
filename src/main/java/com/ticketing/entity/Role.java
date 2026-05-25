@@ -1,13 +1,12 @@
 package com.ticketing.entity;
 
+import com.ticketing.entity.enums.RoleName;
 import jakarta.persistence.*;
 import lombok.*;
 
-// TODO: implemented in Phase X
 @Entity
 @Table(name = "roles")
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -17,5 +16,7 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "name", unique = true, nullable = false)
+    private RoleName name;
 }
