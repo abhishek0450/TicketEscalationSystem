@@ -2,7 +2,6 @@ package com.ticketing.dto.response;
 
 import lombok.*;
 
-// TODO: implemented in Phase X
 @Getter
 @Setter
 @NoArgsConstructor
@@ -10,5 +9,11 @@ import lombok.*;
 @Builder
 public class AuthResponse {
     private String token;
-    private String username;
+    @Builder.Default
+    private String tokenType = "Bearer";
+    private Long userId;
+    private String email;
+    private String fullName;
+    private String role;
+    private long expiresIn;
 }
