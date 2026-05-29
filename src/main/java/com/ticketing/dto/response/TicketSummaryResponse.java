@@ -8,20 +8,16 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TicketResponse {
+public class TicketSummaryResponse {
     private Long id;
     private String title;
-    private String description;
     private String status;
     private String priority;
     private String categoryName;
-    private Long categoryId;
     private UserSummaryResponse createdBy;
     private UserSummaryResponse assignedAgent;
     private Integer escalationLevel;
-    private boolean isDeleted;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private LocalDateTime resolvedAt;
     private LocalDateTime dueAt;
 }
